@@ -9,14 +9,16 @@ int num = Convert.ToInt32(Console.ReadLine());
 
 int SumDigits(int number)
 {
-    int index = 1;
-    int n = 1;
-    int sum = 0;
-    while (index <= number)
+    if (number < 1)
     {
-        // n++;
-        index = index * 10;
-        sum = sum + 0;
+        number = number * -1;
+    }
+    int sum = 0;
+    while (number > 0)
+    {
+        int n = number % 10;
+        number = number / 10;
+        sum = sum + n;
     }
     return sum;
 }
